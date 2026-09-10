@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Produtos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <section class="page">
+        <header class="site-header">
+            <div class="brand">
+                <img src="ICONS/Banner.png" alt="GRW 3D" class="banner">
+            </div>
+        </header>
+
+        <nav class="social-links">
+            <a class="social-link whatsapp" href="https://wa.me/5511952291530" target="_blank" rel="noopener" aria-label="WhatsApp">
+                <img class="icon-image" src="ICONS/whatsapp.png" alt="WhatsApp">
+                <span class="text">WhatsApp</span>
+            </a>
+
+            <a class="social-link instagram" href="https://www.instagram.com/guiz1n_05/" target="_blank" rel="noopener" aria-label="Instagram">
+                <img class="icon-image" src="ICONS/instagram.png" alt="Instagram">
+                <span class="text">Instagram</span>
+            </a>
+
+            <a class="social-link shopee" href="https://shopee.com.br/" target="_blank" rel="noopener" aria-label="Shopee">
+                <img class="icon-image" src="ICONS/shopee.png" alt="Shopee">
+                <span class="text">Shopee</span>
+            </a>
+        </nav>
+
+        <main class="catalog-layout">
+            <aside class="categories-panel">
+                <div class="categories-head">
+                    <div class="category-title">categorias</div>
+                    <button type="button" class="category-collapse" id="category-collapse" aria-label="Recolher filtros" aria-expanded="true">
+                        <span class="category-collapse-icon">☰</span>
+                    </button>
+                </div>
+                <div class="category-list" id="category-list">
+                    <button type="button" class="category-item active" data-category="all">Todos</button>
+                    <button type="button" class="category-item" data-category="utilidades-casa">Utilidades para casa</button>
+                    <button type="button" class="category-item" data-category="infantil">Infantil</button>
+                    <button type="button" class="category-item" data-category="sensoriais">Sensoriais</button>
+                    <button type="button" class="category-item" data-category="decoracao">Decoração</button>
+                    <button type="button" class="category-item" data-category="religioso">Religioso</button>
+                    <button type="button" class="category-item" data-category="nfc">NFC</button>
+                </div>
+            </aside>
+
+            <section class="products-panel">
+                <div class="products-top">
+                    <div class="products-title">produtos</div>
+                    <div class="search-wrap">
+                        <label class="search-label" for="search-input">Buscar</label>
+                        <input type="search" id="search-input" class="search-input" autocomplete="off" placeholder="Buscar produto...">
+                    </div>
+                </div>
+                <section class="product-grid" id="product-grid"></section>
+            </section>
+        </main>
+    </section>
+    <script src="products.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
