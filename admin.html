@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Painel Admin - GRW</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body class="admin-body">
+  <div class="admin-shell">
+    <aside class="admin-sidebar">
+      <div class="admin-brand">
+        <span class="admin-brand__mark">GRW</span>
+        <span class="admin-brand__text">Admin</span>
+      </div>
+
+      <nav class="admin-menu">
+        <a class="admin-menu__item active" href="admin.html">
+          <span class="admin-menu__icon">✦</span>
+          <span>Produtos</span>
+        </a>
+        <a class="admin-menu__item" href="index.html">
+          <span class="admin-menu__icon">▣</span>
+          <span>Catálogo</span>
+        </a>
+      </nav>
+    </aside>
+
+    <main class="admin-main">
+      <section class="admin-topbar">
+        <div>
+          <span class="admin-kicker">Painel administrativo</span>
+          <h1 class="admin-title">Gerenciar catálogo</h1>
+        </div>
+        <a class="admin-link" href="index.html">Ver catálogo</a>
+      </section>
+
+      <section class="admin-layout-grid">
+        <section class="admin-card admin-card--form">
+          <div class="admin-card__header">
+            <div>
+              <span class="admin-card__label">Produto</span>
+              <h2 class="admin-card__title" id="form-title">Adicionar item</h2>
+            </div>
+            <button type="button" class="btn btn--ghost" id="clear-form">Limpar</button>
+          </div>
+
+          <form id="product-form" class="admin-form">
+            <input type="hidden" id="product-index" />
+
+            <div class="admin-form__grid">
+              <label class="admin-field">
+                <span class="admin-field__label">Nome</span>
+                <input type="text" id="name" name="name" required placeholder="Nome do produto" />
+              </label>
+
+              <label class="admin-field">
+                <span class="admin-field__label">Categoria</span>
+                <input list="category-options" type="text" id="category" name="category" required placeholder="ex: chaveiros" />
+                <datalist id="category-options">
+                  <option value="utilidades-casa">
+                  <option value="infantil">
+                  <option value="sensoriais">
+                  <option value="decoracao">
+                  <option value="religioso">
+                  <option value="nfc">
+                  <option value="chaveiros">
+                </datalist>
+              </label>
+
+              <label class="admin-field">
+                <span class="admin-field__label">Tag</span>
+                <input type="text" id="tag" name="tag" required placeholder="ex: Chaveiros" />
+              </label>
+
+              <label class="admin-field">
+                <span class="admin-field__label">Preço</span>
+                <input type="text" id="price" name="price" required placeholder="R$ 99,00" />
+              </label>
+
+              <label class="admin-field admin-field--full">
+                <span class="admin-field__label">Descrição</span>
+                <textarea id="description" name="description" required rows="4" placeholder="Descrição do produto"></textarea>
+              </label>
+
+              <label class="admin-field admin-field--full">
+                <span class="admin-field__label">Imagem</span>
+                <input type="url" id="image" name="image" required placeholder="https://exemplo.com/imagem.jpg" />
+              </label>
+            </div>
+
+            <div class="admin-form__actions">
+              <button type="submit" class="btn btn--primary" id="save-product">Salvar produto</button>
+              <button type="button" class="btn btn--ghost" id="cancel-edit">Cancelar edição</button>
+            </div>
+          </form>
+        </section>
+
+        <section class="admin-card admin-card--list">
+          <div class="admin-card__header">
+            <div>
+              <span class="admin-card__label">Catálogo</span>
+              <h2 class="admin-card__title">Produtos</h2>
+            </div>
+          </div>
+
+          <div class="admin-product-list" id="product-list"></div>
+        </section>
+      </section>
+    </main>
+  </div>
+
+  <script src="products.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>

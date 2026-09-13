@@ -45,7 +45,7 @@ body {
 }
 
 .site-header {
-    min-height: 140px;
+    min-height: 180px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -58,12 +58,18 @@ body {
     padding: 0;
 }
 
+.site-header .brand {
+    width: 100%;
+}
+
 .site-header .banner {
-    width: min(780px, 100%);
+    width: 100%;
     max-width: 100%;
-    height: auto;
-    aspect-ratio: 1024 / 434;
-    object-fit: contain;
+    height: min(260px, 34vw);
+    min-height: 180px;
+    aspect-ratio: 16 / 5;
+    object-fit: cover;
+    object-position: center top;
     display: block;
     border-radius: 4px;
     margin: 0 auto;
@@ -265,6 +271,10 @@ body {
     color: var(--blue);
 }
 
+.category-item[data-category="chaveiros"] {
+    color: var(--blue);
+}
+
 .category-item[data-category="utilidades-casa"]:hover,
 .category-item[data-category="utilidades-casa"].active,
 .category-item[data-category="infantil"]:hover,
@@ -276,7 +286,9 @@ body {
 .category-item[data-category="religioso"]:hover,
 .category-item[data-category="religioso"].active,
 .category-item[data-category="nfc"]:hover,
-.category-item[data-category="nfc"].active {
+.category-item[data-category="nfc"].active,
+.category-item[data-category="chaveiros"]:hover,
+.category-item[data-category="chaveiros"].active {
     border-color: var(--blue);
     background: var(--soft);
     color: var(--blue);
