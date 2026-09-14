@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Painel Admin - GRW</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="admin.css" />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="stylesheet" href="/admin.css" />
 </head>
 <body class="admin-body">
   <div class="admin-shell">
@@ -16,11 +16,11 @@
       </div>
 
       <nav class="admin-menu">
-        <a class="admin-menu__item active" href="admin.html">
+        <a class="admin-menu__item active" href="/admin.html">
           <span class="admin-menu__icon">✦</span>
           <span>Produtos</span>
         </a>
-        <a class="admin-menu__item" href="index.html">
+        <a class="admin-menu__item" href="/index.html">
           <span class="admin-menu__icon">▣</span>
           <span>Catálogo</span>
         </a>
@@ -33,7 +33,7 @@
           <span class="admin-kicker">Painel administrativo</span>
           <h1 class="admin-title">Gerenciar catálogo</h1>
         </div>
-        <a class="admin-link" href="index.html">Ver catálogo</a>
+        <a class="admin-link" href="/index.html">Ver catálogo</a>
       </section>
 
       <section class="admin-layout-grid">
@@ -111,7 +111,8 @@
     </main>
   </div>
 
-  <script src="products.js"></script>
-  <script src="admin.js"></script>
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="/src/admin.js"></script>
 </body>
 </html>

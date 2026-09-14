@@ -116,6 +116,10 @@ const server = http.createServer(async (req, res) => {
     }
   }
 
+  if (url.pathname === '/admin' || url.pathname === '/admin/') {
+    return sendFile(res, adminFile);
+  }
+
   const pathname = url.pathname === '/' ? '/index.html' : url.pathname;
   const requestedFile = path.normalize(path.join(root, pathname.replace(/^\/+/, '')));
 
@@ -127,10 +131,6 @@ const server = http.createServer(async (req, res) => {
 
   if (fs.existsSync(requestedFile) && fs.statSync(requestedFile).isFile()) {
     return sendFile(res, requestedFile);
-  }
-
-  if (pathname === '/admin') {
-    return sendFile(res, adminFile);
   }
 
   res.writeHead(404, { 'Content-Type': 'text/plain; charset=utf-8' });

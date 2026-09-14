@@ -1,0 +1,17 @@
+{
+  "name": "test-catalog-node-react-migration",
+  "version": "1.0.0",
+  "description": "Catálogo de produtos com servidor Node já existente e base para migração gradual para React.",
+  "main": "server.js",
+  "private": true,
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "test": "node --check server.js && node --check admin.js && node --check products.js && node --check script.js && node --check src/catalog.js"
+  },
+  "dependencies": {
+    "react": "latest",
+    "react-dom": "latest"
+  },
+  "devDependencies": {}
+}

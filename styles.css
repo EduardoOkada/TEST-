@@ -13,6 +13,9 @@
     --red: #ff5a4d;
     --green: #22b86a;
     --orange: #ff8a1d;
+    --orange-light: #ffd0a8;
+    --orange-soft: #fff3e8;
+    --orange-deep: #b85a00;
     --blue: #246bff;
     --panel: #ffffff;
     --page-bg: #f7f4ee;
@@ -60,20 +63,46 @@ body {
 
 .site-header .brand {
     width: 100%;
+    position: relative;
 }
 
 .site-header .banner {
     width: 100%;
     max-width: 100%;
-    height: min(260px, 34vw);
+    height: auto;
     min-height: 180px;
-    aspect-ratio: 16 / 5;
-    object-fit: cover;
-    object-position: center top;
+    object-fit: contain;
+    object-position: center;
     display: block;
     border-radius: 4px;
     margin: 0 auto;
     transform: none;
+}
+
+.banner-cta {
+    position: absolute;
+    top: 18px;
+    right: 28px;
+    z-index: 2;
+    background: var(--orange-deep);
+    color: var(--panel-soft);
+    border: 1px solid var(--orange-deep);
+    border-radius: 999px;
+    padding: 12px 26px;
+    font-size: 1rem;
+    font-weight: 800;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    text-decoration: none;
+    box-shadow: 0 8px 18px var(--shadow);
+    transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+
+.banner-cta:hover {
+    background: var(--orange);
+    color: var(--panel-soft);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 22px var(--shadow);
 }
 
 .social-links {
@@ -163,59 +192,72 @@ body {
     justify-content: space-between;
     gap: 12px;
     min-height: 50px;
+    width: 100%;
+    border-bottom: 1px solid var(--orange-light);
+    padding-bottom: 10px;
 }
 
 .category-collapse {
     width: 42px;
     height: 42px;
     border-radius: 50%;
-    border: 1px solid var(--line);
-    background: var(--panel-soft);
-    color: var(--blue);
+    border: 1px solid var(--orange-light);
+    background: var(--orange-soft);
+    color: var(--orange-deep);
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     font: inherit;
     box-shadow: 0 4px 12px var(--shadow);
+    flex: 0 0 auto;
+    align-self: center;
 }
 
 .category-collapse-icon {
     display: inline-block;
     font-size: 1.5rem;
     line-height: 1;
-    color: var(--blue);
+    color: var(--orange-deep);
 }
 
 .category-collapse:hover {
-    border-color: var(--blue);
-    background: var(--soft);
-    color: var(--blue);
-    box-shadow: 0 0 0 3px rgba(36, 107, 255, 0.12);
+    border-color: var(--orange);
+    background: var(--orange-soft);
+    color: var(--orange-deep);
+    box-shadow: 0 0 0 3px rgba(255, 138, 29, 0.14);
 }
 
 .categories-panel {
-    flex: 0 0 auto;
-    width: max-content;
+    flex: 0 0 260px;
+    width: 260px;
     min-width: 240px;
-    max-width: min(360px, 30vw);
-    background: linear-gradient(180deg, var(--panel), var(--panel-soft));
-    border: 1px solid var(--line);
+    max-width: 360px;
+    background: linear-gradient(180deg, var(--orange-soft), var(--panel-soft));
+    border: 1px solid var(--orange-light);
     border-radius: 18px;
     padding: 18px;
     display: flex;
     flex-direction: column;
     box-shadow: 0 8px 18px var(--shadow);
+    align-content: stretch;
+    align-items: stretch;
 }
 
 .category-title {
-    color: var(--blue);
+    color: var(--orange-deep);
     font-size: 1.25rem;
     font-weight: 900;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    padding-bottom: 14px;
-    border-bottom: 1px solid var(--line);
+    padding: 0;
+    border-bottom: none;
+    margin: 0;
+    line-height: 1.3;
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    min-height: 50px;
 }
 
 .category-list {
@@ -223,56 +265,62 @@ body {
     flex-direction: column;
     gap: 10px;
     margin-top: 16px;
+    width: 100%;
 }
 
 .category-item {
-    color: var(--blue);
+    color: var(--orange-deep);
     font-size: 1rem;
     font-weight: 800;
     padding: 12px 14px;
     border-radius: 12px;
-    background: transparent;
-    border: 1px solid transparent;
+    background: var(--orange-soft);
+    border: 1px solid var(--orange-light);
     cursor: pointer;
-    transition: transform .2s ease, background .2s ease, color .2s ease, border-color .2s ease;
     text-align: left;
     font-family: inherit;
+    width: 100%;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    line-height: 1.2;
 }
 
 .category-item:hover,
 .category-item.active {
-    border-color: var(--blue);
-    color: var(--blue);
-    background: var(--soft);
-    transform: translateX(4px);
+    border-color: var(--orange);
+    color: var(--orange-deep);
+    background: var(--orange-light);
+    box-shadow: none;
 }
 
 .category-item[data-category="utilidades-casa"] {
-    color: var(--blue);
+    color: var(--orange-deep);
 }
 
 .category-item[data-category="infantil"] {
-    color: var(--blue);
+    color: var(--orange-deep);
 }
 
 .category-item[data-category="sensoriais"] {
-    color: var(--blue);
+    color: var(--orange-deep);
 }
 
 .category-item[data-category="decoracao"] {
-    color: var(--blue);
+    color: var(--orange-deep);
 }
 
 .category-item[data-category="religioso"] {
-    color: var(--blue);
+    color: var(--orange-deep);
 }
 
 .category-item[data-category="nfc"] {
-    color: var(--blue);
+    color: var(--orange-deep);
 }
 
 .category-item[data-category="chaveiros"] {
-    color: var(--blue);
+    color: var(--orange-deep);
 }
 
 .category-item[data-category="utilidades-casa"]:hover,
@@ -289,9 +337,10 @@ body {
 .category-item[data-category="nfc"].active,
 .category-item[data-category="chaveiros"]:hover,
 .category-item[data-category="chaveiros"].active {
-    border-color: var(--blue);
-    background: var(--soft);
-    color: var(--blue);
+    border-color: var(--orange);
+    background: var(--orange-light);
+    color: var(--orange-deep);
+    box-shadow: 0 10px 20px var(--shadow);
 }
 
 .products-panel {
